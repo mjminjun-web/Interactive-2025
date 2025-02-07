@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Exploration: Online Belonging</title>
+</head>
 <body>
-  
-  <input type="text" value="Type What you need Help" enable>
-  <input type="radio" checked> <input type="checkbox" checked>
-  <input type="range" min="10" max="40" value="10">
-  <br>
-  <a href="index-3.html ">Next ➔</a>
-  <a href="index-1.html ">Previous ←</a>
+    <h2 id="page2">Word Exploration: Online Belonging</h2>
+    <p>Select 5 words that represent online belonging to you:</p>
+    <form>
+        <ul>
+            <li><input type="checkbox" id="community" name="word" value="Community"> <label for="community"><marquee behavior="scroll" direction="down">Community</marquee></label></li>
+            <li><input type="checkbox" id="identity" name="word" value="Identity"> <label for="identity">Identity</label></li>
+            <li><input type="checkbox" id="connection" name="word" value="Connection"> <label for="connection">Connection</label></li>
+            <li><input type="checkbox" id="safety" name="word" value="Safety"> <label for="safety">Safety</label></li>
+            <li><input type="checkbox" id="acceptance" name="word" value="Acceptance"> <label for="acceptance">Acceptance</label></li>
+            <li><input type="checkbox" id="privacy" name="word" value="Privacy"> <label for="privacy">Privacy</label></li>
+            <li><input type="checkbox" id="expression" name="word" value="Expression"> <label for="expression">Expression</label></li>
+            <li><input type="checkbox" id="support" name="word" value="Support"> <label for="support">Support</label></li>
+        </ul>
+        <p>Explain your word choices below:</p>
+        <textarea rows="5" cols="50" name="explanation"></textarea>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
