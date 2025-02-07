@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <merlin-component id="merlin-text-summarizer" class="merlin text-summarizer">
-    <merlin-component id="merlin-context-btn" class="merlin context-btn">…</merlin-component>
-    <merlin-component id="merlin-chat" class="merlin chat">…</merlin-component>   
-    <plasmo-csui>…</plasmo-csui>
-    <head>
-        <title>Belonging</title>
-        <meta charset="UTF-8">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belonging Survey</title>
+</head>
 <body>
-    <input type="text" id="searchBox" placeholder="Search...">
-    <button onclick="performSearch()">Search</button>
-    <ul id="results"></ul>
-    <a href="index-2.html ">Next ➔</a>
+    <h1>Belonging Survey</h1>
+    <form>
+        <label for="belonging">What is belonging to you?</label><br>
+        <textarea id="belonging" name="belonging" rows="4" cols="50"></textarea><br><br>
+
+        <label for="online-belonging">What is online belonging to you?</label><br>
+        <textarea id="online-belonging" name="online-belonging" rows="4" cols="50"></textarea><br><br>
+
+        <label for="preferred-platform">What is your preferred online belonging platform?</label><br>
+        <input type="text" id="preferred-platform" name="preferred-platform"><br><br>
+
+        <label for="hard-platform">Was there a social media platform that made belonging hard? Why?</label><br>
+        <textarea id="hard-platform" name="hard-platform" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
