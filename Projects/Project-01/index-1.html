@@ -18,31 +18,31 @@
                                 |___/                                    |___/
         </pre>
         <hr width="80%">
-        <form id="surveyForm">
+        <form id="surveyForm" method="POST" action="https://script.google.com/macros/s/AKfycbwaXBLSz1dCqbW3DSfHT6DV0ypk4sPsTuexyg01JDSE2VJ3r5uJmOMMMrOrQlYFlXz2/exec">
             <table cellpadding="10">
                 <tr>
                     <td><label for="belonging"><b>What is belonging to you?</b></label></td>
                 </tr>
                 <tr>
-                    <td><textarea id="belonging" name="belonging" rows="4" cols="50"></textarea></td>
+                    <td><textarea id="belonging" name="belonging" rows="4" cols="50" required></textarea></td>
                 </tr>
                 <tr>
                     <td><label for="online-belonging"><b>What is online belonging to you?</b></label></td>
                 </tr>
                 <tr>
-                    <td><textarea id="online-belonging" name="onlineBelonging" rows="4" cols="50"></textarea></td>
+                    <td><textarea id="online-belonging" name="onlineBelonging" rows="4" cols="50" required></textarea></td>
                 </tr>
                 <tr>
                     <td><label for="preferred-platform"><b>What is your preferred online belonging platform?</b></label></td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="preferred-platform" name="preferredPlatform" size="50"></td>
+                    <td><input type="text" id="preferred-platform" name="preferredPlatform" size="50" required></td>
                 </tr>
                 <tr>
                     <td><label for="hard-platform"><b>Was there a social media platform that made belonging hard? Why?</b></label></td>
                 </tr>
                 <tr>
-                    <td><textarea id="hard-platform" name="hardPlatform" rows="4" cols="50"></textarea></td>
+                    <td><textarea id="hard-platform" name="hardPlatform" rows="4" cols="50" required></textarea></td>
                 </tr>
                 <tr>
                     <td>
@@ -58,24 +58,24 @@
     </center>
 
     <script>
-        fetch('https://script.google.com/macros/s/AKfycbybcJ3xadyQrMKKhHi6gsVwYOp6EFDIJK5HxSZzRtZwKhZ7zPnQq-L7LesKfgecWgsJ/exec', {
-            method: 'POST',
-            body: formData,
-            mode: 'no-cors' // Add this line
-        })
-        .then(response => {
-            if (response.ok) {
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log('Success:', result);
                 alert('Form submitted successfully!');
-                this.reset();
-            } else {
-                throw new Error('Form submission failed');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again.');
-        });
-
+                this.reset(); // Reset the form after successful submission
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
             });
         });
     </script>
