@@ -61,7 +61,7 @@
         document.getElementById('surveyForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var formData = new FormData(this);
-            fetch('https://docs.google.com/spreadsheets/d/12hF5IiPiMNr-x5MJYMZz001dqkQreqtUAYl-9glYuxw/edit?gid=0#gid=0', {
+            fetch('https://script.google.com/u/0/home/projects/1XTJymbrc8_Ch63mtb16Rut35KS0JH9JXSEyTBHcPl28uFbuc6YpkDLJM/edit', {
                 method: 'POST',
                 body: formData
             })
