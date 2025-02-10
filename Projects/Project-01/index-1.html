@@ -18,7 +18,7 @@
                                 |___/                                    |___/
         </pre>
         <hr width="80%">
-        <form>
+        <form id="surveyForm">
             <table cellpadding="10">
                 <tr>
                     <td><label for="belonging"><b>What is belonging to you?</b></label></td>
@@ -30,19 +30,19 @@
                     <td><label for="online-belonging"><b>What is online belonging to you?</b></label></td>
                 </tr>
                 <tr>
-                    <td><textarea id="online-belonging" name="online-belonging" rows="4" cols="50"></textarea></td>
+                    <td><textarea id="online-belonging" name="onlineBelonging" rows="4" cols="50"></textarea></td>
                 </tr>
                 <tr>
                     <td><label for="preferred-platform"><b>What is your preferred online belonging platform?</b></label></td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="preferred-platform" name="preferred-platform" size="50"></td>
+                    <td><input type="text" id="preferred-platform" name="preferredPlatform" size="50"></td>
                 </tr>
                 <tr>
                     <td><label for="hard-platform"><b>Was there a social media platform that made belonging hard? Why?</b></label></td>
                 </tr>
                 <tr>
-                    <td><textarea id="hard-platform" name="hard-platform" rows="4" cols="50"></textarea></td>
+                    <td><textarea id="hard-platform" name="hardPlatform" rows="4" cols="50"></textarea></td>
                 </tr>
                 <tr>
                     <td>
@@ -56,5 +56,25 @@
             </table>
         </form>
     </center>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            fetch('https://docs.google.com/spreadsheets/d/12hF5IiPiMNr-x5MJYMZz001dqkQreqtUAYl-9glYuxw/edit?gid=0#gid=0', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert('Form submitted successfully!');
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    </script>
 </body>
 </html>
