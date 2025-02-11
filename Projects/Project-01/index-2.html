@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Exploration: Online Belonging</title>
+    <style>
+        .word-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <center>
@@ -11,28 +19,53 @@
         <hr width="80%">
         <p><i>Select 5 words that represent online belonging to you:</i></p>
         <form>
-            <table cellpadding="5">
-                <tr>
-                    <marquee direction="up" width="300" height="300" behavior="alternate">Hashtags, App </marquee><td><label for="community">
-                    <marquee behavior="alternate">Culture</marquee>
-                    <marquee behavior="alternate">Video</marquee>
+            <div class="word-container">
+                <table cellpadding="5">
+                    <tr>
+                        <marquee direction="up" width="300" height="300" behavior="alternate">Hashtags</marquee>
+                        <td>
+                            <label for="community">
+                                <marquee behavior="alternate">Culture</marquee>
+                                <marquee behavior="alternate">Video</marquee>
+                                <marquee behavior="scroll" direction="down" width="100">Community</marquee>
+                            </label>
+                        </td>
+                        <td><label for="media"><marquee behavior="alternate" width="150">Media</marquee></label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="connection"><marquee behavior="scroll" direction="up" width="100">Connection</marquee></label></td>
+                        <td><label for="Ai"><marquee behavior="scroll" direction="left">Ai</marquee>Safety</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="acceptance">Acceptance</label></td>
+                        <td><label for="privacy">Privacy</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="expression">Expression</label></td>
+                        <td><label for="support">Support</label></td>
+                    </tr>
+                </table>
 
-                    <marquee behavior="scroll" direction="down" width="100">Community</marquee></label></td>
-                    <td><label for="media"><marquee behavior="alternate" width="150">Media</marquee></label></td>
-                </tr>
-                <tr>
-                    <td><label for="connection"><marquee behavior="scroll" direction="up" width="100">Connection</label></td>
-                    <td><label for="Ai"><marquee behavior="scroll" direction="left">Ai</marquee>Safety</label></td>
-                </tr>
-                <tr>
-                    <td><label for="acceptance">Acceptance</label></td>
-                    <td><label for="privacy">Privacy</label></td>
-                </tr>
-                <tr>
-                    <td><label for="expression">Expression</label></td>
-                    <td><label for="support">Support</label></td>
-                </tr>
-            </table>
+                <!-- Additional words -->
+                <marquee behavior="alternate" direction="up" scrollamount="2">
+                    <marquee behavior="alternate" direction="left" scrollamount="3">Military</marquee>
+                </marquee>
+                <marquee behavior="scroll" direction="down" scrollamount="4">
+                    <marquee behavior="alternate" direction="right" scrollamount="2">Swim</marquee>
+                </marquee>
+                <marquee behavior="slide" direction="up" scrollamount="1">
+                    <marquee behavior="scroll" direction="left" scrollamount="3">Alliance</marquee>
+                </marquee>
+                <marquee behavior="alternate" direction="down" scrollamount="3">
+                    <marquee behavior="alternate" direction="right" scrollamount="2">Amity</marquee>
+                </marquee>
+                <marquee behavior="scroll" direction="up" scrollamount="2">
+                    <marquee behavior="scroll" direction="left" scrollamount="4">Movie</marquee>
+                </marquee>
+                
+                <!-- Add more words here following the same pattern -->
+            </div>
+
             <p><b>Explain your word choices below:</b></p>
             <textarea rows="5" cols="50" name="explanation"></textarea>
             <br><br>
