@@ -25,14 +25,14 @@
         .word-container {
             position: relative;
             width: 100%;
-            height: 60vh;
+            height: 70vh;
             overflow: hidden;
             border: 1px solid #ccc;
             margin-bottom: 20px;
         }
         .moving-word {
             position: absolute;
-            animation-duration: 15s;
+            animation-duration: 20s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
             font-size: 16px;
@@ -49,19 +49,25 @@
         .word10 { animation-name: move10; }
         .word11 { animation-name: move11; }
         .word12 { animation-name: move12; }
+        .word13 { animation-name: move13; }
+        .word14 { animation-name: move14; }
+        .word15 { animation-name: move15; }
 
-        @keyframes move1 { 0% { top: 0; left: 0; } 50% { top: 80%; left: 80%; } 100% { top: 0; left: 0; } }
-        @keyframes move2 { 0% { top: 100%; left: 100%; } 50% { top: 20%; left: 20%; } 100% { top: 100%; left: 100%; } }
-        @keyframes move3 { 0% { top: 50%; left: 0; } 50% { top: 50%; left: 100%; } 100% { top: 50%; left: 0; } }
-        @keyframes move4 { 0% { top: 30%; left: 60%; } 50% { top: 10%; left: 10%; } 100% { top: 30%; left: 60%; } }
-        @keyframes move5 { 0% { top: 70%; left: 0; } 50% { top: 30%; left: 100%; } 100% { top: 70%; left: 0; } }
-        @keyframes move6 { 0% { top: 20%; left: 80%; } 50% { top: 90%; left: 40%; } 100% { top: 20%; left: 80%; } }
-        @keyframes move7 { 0% { top: 40%; left: 20%; } 50% { top: 60%; left: 80%; } 100% { top: 40%; left: 20%; } }
-        @keyframes move8 { 0% { top: 80%; left: 60%; } 50% { top: 10%; left: 30%; } 100% { top: 80%; left: 60%; } }
-        @keyframes move9 { 0% { top: 15%; left: 40%; } 50% { top: 85%; left: 70%; } 100% { top: 15%; left: 40%; } }
-        @keyframes move10 { 0% { top: 90%; left: 10%; } 50% { top: 5%; left: 90%; } 100% { top: 90%; left: 10%; } }
-        @keyframes move11 { 0% { top: 60%; left: 50%; } 50% { top: 25%; left: 5%; } 100% { top: 60%; left: 50%; } }
-        @keyframes move12 { 0% { top: 35%; left: 75%; } 50% { top: 70%; left: 25%; } 100% { top: 35%; left: 75%; } }
+        @keyframes move1 { 0% { top: 0%; left: 0%; } 25% { top: 75%; left: 25%; } 50% { top: 50%; left: 100%; } 75% { top: 25%; left: 75%; } 100% { top: 0%; left: 0%; } }
+        @keyframes move2 { 0% { top: 100%; left: 100%; } 25% { top: 25%; left: 75%; } 50% { top: 0%; left: 50%; } 75% { top: 75%; left: 25%; } 100% { top: 100%; left: 100%; } }
+        @keyframes move3 { 0% { top: 50%; left: 0%; } 25% { top: 0%; left: 50%; } 50% { top: 100%; left: 100%; } 75% { top: 50%; left: 50%; } 100% { top: 50%; left: 0%; } }
+        @keyframes move4 { 0% { top: 25%; left: 75%; } 25% { top: 100%; left: 25%; } 50% { top: 75%; left: 0%; } 75% { top: 0%; left: 100%; } 100% { top: 25%; left: 75%; } }
+        @keyframes move5 { 0% { top: 75%; left: 25%; } 25% { top: 50%; left: 100%; } 50% { top: 25%; left: 75%; } 75% { top: 100%; left: 0%; } 100% { top: 75%; left: 25%; } }
+        @keyframes move6 { 0% { top: 0%; left: 50%; } 25% { top: 100%; left: 75%; } 50% { top: 50%; left: 25%; } 75% { top: 25%; left: 0%; } 100% { top: 0%; left: 50%; } }
+        @keyframes move7 { 0% { top: 100%; left: 0%; } 25% { top: 25%; left: 50%; } 50% { top: 0%; left: 100%; } 75% { top: 75%; left: 75%; } 100% { top: 100%; left: 0%; } }
+        @keyframes move8 { 0% { top: 50%; left: 100%; } 25% { top: 75%; left: 0%; } 50% { top: 100%; left: 50%; } 75% { top: 0%; left: 25%; } 100% { top: 50%; left: 100%; } }
+        @keyframes move9 { 0% { top: 25%; left: 25%; } 25% { top: 0%; left: 75%; } 50% { top: 75%; left: 50%; } 75% { top: 100%; left: 100%; } 100% { top: 25%; left: 25%; } }
+        @keyframes move10 { 0% { top: 75%; left: 75%; } 25% { top: 50%; left: 0%; } 50% { top: 25%; left: 100%; } 75% { top: 0%; left: 50%; } 100% { top: 75%; left: 75%; } }
+        @keyframes move11 { 0% { top: 0%; left: 100%; } 25% { top: 100%; left: 50%; } 50% { top: 50%; left: 75%; } 75% { top: 25%; left: 25%; } 100% { top: 0%; left: 100%; } }
+        @keyframes move12 { 0% { top: 100%; left: 50%; } 25% { top: 25%; left: 100%; } 50% { top: 0%; left: 25%; } 75% { top: 75%; left: 0%; } 100% { top: 100%; left: 50%; } }
+        @keyframes move13 { 0% { top: 50%; left: 25%; } 25% { top: 75%; left: 100%; } 50% { top: 100%; left: 0%; } 75% { top: 0%; left: 75%; } 100% { top: 50%; left: 25%; } }
+        @keyframes move14 { 0% { top: 25%; left: 0%; } 25% { top: 0%; left: 25%; } 50% { top: 75%; left: 75%; } 75% { top: 100%; left: 25%; } 100% { top: 25%; left: 0%; } }
+        @keyframes move15 { 0% { top: 75%; left: 50%; } 25% { top: 50%; left: 75%; } 50% { top: 25%; left: 0%; } 75% { top: 50%; left: 100%; } 100% { top: 75%; left: 50%; } }
 
         textarea {
             width: 100%;
@@ -98,30 +104,27 @@
             <span class="moving-word word10">Network</span>
             <span class="moving-word word11">Reunion</span>
             <span class="moving-word word12">College</span>
-            <span class="moving-word word12">Link</span>
-            <span class="moving-word word12">Trend</span>
-            <span class="moving-word word12">Security</span>
+            <span class="moving-word word13">Link</span>
+            <span class="moving-word word14">Trend</span>
+            <span class="moving-word word15">Security</span>
 
-            <marquee behavior="alternate" direction="up" scrollamount="2">
-                <marquee behavior="alternate" direction="left" scrollamount="3">Discord</marquee>
+            <marquee behavior="alternate" direction="up" scrollamount="1" height="100%">
+                <marquee behavior="alternate" direction="left" scrollamount="2">Discord</marquee>
             </marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="4">
-                <marquee behavior="alternate" direction="right" scrollamount="2">Movement</marquee>
+            <marquee behavior="scroll" direction="down" scrollamount="2" height="100%">
+                <marquee behavior="alternate" direction="right" scrollamount="1">Movement</marquee>
             </marquee>
-            <marquee behavior="slide" direction="right" scrollamount="3">Update</marquee>
-            <marquee behavior="scroll" direction="left" scrollamount="2">Bitcoin</marquee>
-            <marquee behavior="alternate" direction="up" scrollamount="3" height="100">Comment</marquee>
-            <marquee behavior="scroll" direction="right" scrollamount="2">Virtual</marquee>
-            <marquee behavior="alternate" direction="down" scrollamount="3" height="100">Link</marquee>
-            <marquee behavior="scroll" direction="left" scrollamount="4">Club</marquee>
-            <marquee behavior="alternate" direction="up" scrollamount="2">
-                <marquee behavior="alternate" direction="right" scrollamount="3">Society</marquee>
+            <marquee behavior="slide" direction="right" scrollamount="1">Update</marquee>
+            <marquee behavior="scroll" direction="left" scrollamount="1">Bitcoin</marquee>
+            <marquee behavior="alternate" direction="up" scrollamount="2" height="100%">Comment</marquee>
+            <marquee behavior="scroll" direction="right" scrollamount="1">Virtual</marquee>
+            <marquee behavior="alternate" direction="down" scrollamount="2" height="100%">Club</marquee>
+            <marquee behavior="scroll" direction="left" scrollamount="1">Society</marquee>
+            <marquee behavior="alternate" direction="up" scrollamount="1" height="100%">
+                <marquee behavior="alternate" direction="right" scrollamount="2">Technology</marquee>
             </marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="3">Trend</marquee>
-            <marquee behavior="alternate" direction="left" scrollamount="2">Technology</marquee>
-            <marquee behavior="scroll" direction="up" scrollamount="4" height="100">Video-call</marquee>
-            <marquee behavior="alternate" direction="right" scrollamount="3">Sport</marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2">Security</marquee>
+            <marquee behavior="scroll" direction="down" scrollamount="2" height="100%">Video-call</marquee>
+            <marquee behavior="alternate" direction="left" scrollamount="1">Sport</marquee>
         </div>
         <p><b>Explain your word choices below:</b></p>
         <textarea rows="3" name="explanation"></textarea>

@@ -3,130 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Exploration: Online Belonging</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        h2 {
-            margin-top: 0;
-            text-align: center;
-        }
-        .word-container {
-            position: relative;
-            width: 100%;
-            height: 60vh;
-            overflow: hidden;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-        }
-        .moving-word {
-            position: absolute;
-            animation-duration: 15s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            font-size: 16px;
-        }
-        .word1 { animation-name: move1; }
-        .word2 { animation-name: move2; }
-        .word3 { animation-name: move3; }
-        .word4 { animation-name: move4; }
-        .word5 { animation-name: move5; }
-        .word6 { animation-name: move6; }
-        .word7 { animation-name: move7; }
-        .word8 { animation-name: move8; }
-        .word9 { animation-name: move9; }
-        .word10 { animation-name: move10; }
-        .word11 { animation-name: move11; }
-        .word12 { animation-name: move12; }
-
-        @keyframes move1 { 0% { top: 0; left: 0; } 50% { top: 80%; left: 80%; } 100% { top: 0; left: 0; } }
-        @keyframes move2 { 0% { top: 100%; left: 100%; } 50% { top: 20%; left: 20%; } 100% { top: 100%; left: 100%; } }
-        @keyframes move3 { 0% { top: 50%; left: 0; } 50% { top: 50%; left: 100%; } 100% { top: 50%; left: 0; } }
-        @keyframes move4 { 0% { top: 30%; left: 60%; } 50% { top: 10%; left: 10%; } 100% { top: 30%; left: 60%; } }
-        @keyframes move5 { 0% { top: 70%; left: 0; } 50% { top: 30%; left: 100%; } 100% { top: 70%; left: 0; } }
-        @keyframes move6 { 0% { top: 20%; left: 80%; } 50% { top: 90%; left: 40%; } 100% { top: 20%; left: 80%; } }
-        @keyframes move7 { 0% { top: 40%; left: 20%; } 50% { top: 60%; left: 80%; } 100% { top: 40%; left: 20%; } }
-        @keyframes move8 { 0% { top: 80%; left: 60%; } 50% { top: 10%; left: 30%; } 100% { top: 80%; left: 60%; } }
-        @keyframes move9 { 0% { top: 15%; left: 40%; } 50% { top: 85%; left: 70%; } 100% { top: 15%; left: 40%; } }
-        @keyframes move10 { 0% { top: 90%; left: 10%; } 50% { top: 5%; left: 90%; } 100% { top: 90%; left: 10%; } }
-        @keyframes move11 { 0% { top: 60%; left: 50%; } 50% { top: 25%; left: 5%; } 100% { top: 60%; left: 50%; } }
-        @keyframes move12 { 0% { top: 35%; left: 75%; } 50% { top: 70%; left: 25%; } 100% { top: 35%; left: 75%; } }
-
-        textarea {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            display: block;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-    </style>
+    <title>Belonging Survey</title>
 </head>
 <body>
-    <div class="container">
-        <h2>🌐 Word Exploration: Online Belonging 🌐</h2>
-        <p><i>Select 5 words that represent online belonging to you:</i></p>
-        <div class="word-container">
-            <span class="moving-word word1">Military</span>
-            <span class="moving-word word2">Swim</span>
-            <span class="moving-word word3">Alliance</span>
-            <span class="moving-word word4">Game</span>
-            <span class="moving-word word5">Computer</span>
-            <span class="moving-word word6">E-learning</span>
-            <span class="moving-word word7">Subcommunity</span>
-            <span class="moving-word word8">Ui-ux</span>
-            <span class="moving-word word9">DM</span>
-            <span class="moving-word word10">Network</span>
-            <span class="moving-word word11">Reunion</span>
-            <span class="moving-word word12">College</span>
+    <center>
+        <pre>
+   ___      _                _             ___                     
+  / __\    | |             (_)           / __\                    
+          | | / ___ | | ___ _ _ __   __ _ _ __   __ \ \  _   _ _ ____    _____ /\  /\
+          | |-\/ _ \| |/ _ \ | '_ \ / _` | '_ \ / _` \ \ | | | | '__\ \ / / _ \\  \/ /
+         | |_| (/)/| | (_) / | | | | | (_| | | | | (_| |__) | |_| | |  \ V /  __/ \  /
+         \__/\___/ |_|\___/|_| |_| |_|\__,|_| |_|\__,_\___/ \__,_|_|    \_/ \___| / /
+                                 __/ |                                    __/ /
+                                |___/                                    |___/
+        </pre>
+        <hr width="80%">
+        <form id="surveyForm" method="POST" action="YOUR_WEBAPP_URL">
+            <table cellpadding="10">
+                <tr>
+                    <td><label for="belonging"><b>What is belonging to you?</b></label></td>
+                </tr>
+                <tr>
+                    <td><textarea id="belonging" name="belonging" rows="4" cols="50" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="online-belonging"><b>What is online belonging to you?</b></label></td>
+                </tr>
+                <tr>
+                    <td><textarea id="online-belonging" name="onlineBelonging" rows="4" cols="50" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="preferred-platform"><b>What is your preferred online belonging platform?</b></label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="preferred-platform" name="preferredPlatform" size="50" required></td>
+                </tr>
+                <tr>
+                    <td><label for="hard-platform"><b>Was there a social media platform that made belonging hard? Why?</b></label></td>
+                </tr>
+                <tr>
+                    <td><textarea id="hard-platform" name="hardPlatform" rows="4" cols="50" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">Submit</button>
+                        &nbsp;&nbsp;
+                        <a href="index-2.html"><button type="button">Next  ➔</button></a>
+                        &nbsp;&nbsp;
+                        <a href="https://h20dg.github.io/Interactive-2025/Projects/Project-01/index-1.html"><button type="button">Drawing</button></a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
 
-            <marquee behavior="alternate" direction="up" scrollamount="2">
-                <marquee behavior="alternate" direction="left" scrollamount="3">Discord</marquee>
-            </marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="4">
-                <marquee behavior="alternate" direction="right" scrollamount="2">Movement</marquee>
-            </marquee>
-            <marquee behavior="slide" direction="right" scrollamount="3">Update</marquee>
-            <marquee behavior="scroll" direction="left" scrollamount="2">Bitcoin</marquee>
-            <marquee behavior="alternate" direction="up" scrollamount="3" height="100">Comment</marquee>
-            <marquee behavior="scroll" direction="right" scrollamount="2">Virtual</marquee>
-            <marquee behavior="alternate" direction="down" scrollamount="3" height="100">Link</marquee>
-            <marquee behavior="scroll" direction="left" scrollamount="4">Club</marquee>
-            <marquee behavior="alternate" direction="up" scrollamount="2">
-                <marquee behavior="alternate" direction="right" scrollamount="3">Society</marquee>
-            </marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="3">Trend</marquee>
-            <marquee behavior="alternate" direction="left" scrollamount="2">Technology</marquee>
-            <marquee behavior="scroll" direction="up" scrollamount="4" height="100">Video-call</marquee>
-            <marquee behavior="alternate" direction="right" scrollamount="3">Sport</marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2">Security</marquee>
-        </div>
-        <p><b>Explain your word choices below:</b></p>
-        <textarea rows="3" name="explanation"></textarea>
-        <div class="button-container">
-            <button type="submit">📤 Submit</button>
-            <a href="index-3.html"><button type="button">Next ➔</button></a>
-            <a href="https://risatoohara.github.io/Interactive-2025/Projects/Project-01/index-1.html" target="_blank"><button type="button">If you like Bird</button></a>
-        </div>
-    </div>
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log('Success:', result);
+                alert('Form submitted successfully!');
+                this.reset(); // Reset the form after successful submission
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    </script>
 </body>
 </html>
