@@ -1,138 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Exploration: Online Belonging</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        h2 {
-            margin-top: 0;
-            text-align: center;
-        }
-        .word-container {
-            position: relative;
-            width: 100%;
-            height: 70vh;
-            overflow: hidden;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-        }
-        .moving-word {
-            position: absolute;
-            animation-duration: 20s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            font-size: 16px;
-        }
-        .word1 { animation-name: move1; }
-        .word2 { animation-name: move2; }
-        .word3 { animation-name: move3; }
-        .word4 { animation-name: move4; }
-        .word5 { animation-name: move5; }
-        .word6 { animation-name: move6; }
-        .word7 { animation-name: move7; }
-        .word8 { animation-name: move8; }
-        .word9 { animation-name: move9; }
-        .word10 { animation-name: move10; }
-        .word11 { animation-name: move11; }
-        .word12 { animation-name: move12; }
-        .word13 { animation-name: move13; }
-        .word14 { animation-name: move14; }
-        .word15 { animation-name: move15; }
+<style>
+    /* ... (keep existing styles) ... */
 
-        @keyframes move1 { 0% { top: 0%; left: 0%; } 25% { top: 75%; left: 25%; } 50% { top: 50%; left: 100%; } 75% { top: 25%; left: 75%; } 100% { top: 0%; left: 0%; } }
-        @keyframes move2 { 0% { top: 100%; left: 100%; } 25% { top: 25%; left: 75%; } 50% { top: 0%; left: 50%; } 75% { top: 75%; left: 25%; } 100% { top: 100%; left: 100%; } }
-        @keyframes move3 { 0% { top: 50%; left: 0%; } 25% { top: 0%; left: 50%; } 50% { top: 100%; left: 100%; } 75% { top: 50%; left: 50%; } 100% { top: 50%; left: 0%; } }
-        @keyframes move4 { 0% { top: 25%; left: 75%; } 25% { top: 100%; left: 25%; } 50% { top: 75%; left: 0%; } 75% { top: 0%; left: 100%; } 100% { top: 25%; left: 75%; } }
-        @keyframes move5 { 0% { top: 75%; left: 25%; } 25% { top: 50%; left: 100%; } 50% { top: 25%; left: 75%; } 75% { top: 100%; left: 0%; } 100% { top: 75%; left: 25%; } }
-        @keyframes move6 { 0% { top: 0%; left: 50%; } 25% { top: 100%; left: 75%; } 50% { top: 50%; left: 25%; } 75% { top: 25%; left: 0%; } 100% { top: 0%; left: 50%; } }
-        @keyframes move7 { 0% { top: 100%; left: 0%; } 25% { top: 25%; left: 50%; } 50% { top: 0%; left: 100%; } 75% { top: 75%; left: 75%; } 100% { top: 100%; left: 0%; } }
-        @keyframes move8 { 0% { top: 50%; left: 100%; } 25% { top: 75%; left: 0%; } 50% { top: 100%; left: 50%; } 75% { top: 0%; left: 25%; } 100% { top: 50%; left: 100%; } }
-        @keyframes move9 { 0% { top: 25%; left: 25%; } 25% { top: 0%; left: 75%; } 50% { top: 75%; left: 50%; } 75% { top: 100%; left: 100%; } 100% { top: 25%; left: 25%; } }
-        @keyframes move10 { 0% { top: 75%; left: 75%; } 25% { top: 50%; left: 0%; } 50% { top: 25%; left: 100%; } 75% { top: 0%; left: 50%; } 100% { top: 75%; left: 75%; } }
-        @keyframes move11 { 0% { top: 0%; left: 100%; } 25% { top: 100%; left: 50%; } 50% { top: 50%; left: 75%; } 75% { top: 25%; left: 25%; } 100% { top: 0%; left: 100%; } }
-        @keyframes move12 { 0% { top: 100%; left: 50%; } 25% { top: 25%; left: 100%; } 50% { top: 0%; left: 25%; } 75% { top: 75%; left: 0%; } 100% { top: 100%; left: 50%; } }
-        @keyframes move13 { 0% { top: 50%; left: 25%; } 25% { top: 75%; left: 100%; } 50% { top: 100%; left: 0%; } 75% { top: 0%; left: 75%; } 100% { top: 50%; left: 25%; } }
-        @keyframes move14 { 0% { top: 25%; left: 0%; } 25% { top: 0%; left: 25%; } 50% { top: 75%; left: 75%; } 75% { top: 100%; left: 25%; } 100% { top: 25%; left: 0%; } }
-        @keyframes move15 { 0% { top: 75%; left: 50%; } 25% { top: 50%; left: 75%; } 50% { top: 25%; left: 0%; } 75% { top: 50%; left: 100%; } 100% { top: 75%; left: 50%; } }
+    .word1 { animation-name: move1; }
+    .word2 { animation-name: move2; }
+    .word3 { animation-name: move3; }
+    .word4 { animation-name: move4; }
+    .word5 { animation-name: move5; }
+    .word6 { animation-name: move6; }
+    .word7 { animation-name: move7; }
+    .word8 { animation-name: move8; }
+    .word9 { animation-name: move9; }
+    .word10 { animation-name: move10; }
+    .word11 { animation-name: move11; }
+    .word12 { animation-name: move12; }
+    .word13 { animation-name: move13; }
+    .word14 { animation-name: move14; }
+    .word15 { animation-name: move15; }
 
-        textarea {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            display: block;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>🌐 Word Exploration: Online Belonging 🌐</h2>
-        <p><i>Select 5 words that represent online belonging to you:</i></p>
-        <div class="word-container">
-            <span class="moving-word word1">Military</span>
-            <span class="moving-word word2">Swim</span>
-            <span class="moving-word word3">Alliance</span>
-            <span class="moving-word word4">Game</span>
-            <span class="moving-word word5">Computer</span>
-            <span class="moving-word word6">E-learning</span>
-            <span class="moving-word word7">Subcommunity</span>
-            <span class="moving-word word8">Ui-ux</span>
-            <span class="moving-word word9">DM</span>
-            <span class="moving-word word10">Network</span>
-            <span class="moving-word word11">Reunion</span>
-            <span class="moving-word word12">College</span>
-            <span class="moving-word word13">Link</span>
-            <span class="moving-word word14">Trend</span>
-            <span class="moving-word word15">Security</span>
+    @keyframes move1 { 0% { top: 88%; left: 87%; } 25% { top: 74%; left: 83%; } 50% { top: 3%; left: 29%; } 75% { top: 38%; left: 63%; } 100% { top: 88%; left: 87%; } }
+    @keyframes move2 { 0% { top: 21%; left: 34%; } 25% { top: 99%; left: 100%; } 50% { top: 23%; left: 76%; } 75% { top: 83%; left: 52%; } 100% { top: 21%; left: 34%; } }
+    @keyframes move3 { 0% { top: 86%; left: 68%; } 25% { top: 61%; left: 65%; } 50% { top: 1%; left: 78%; } 75% { top: 76%; left: 38%; } 100% { top: 86%; left: 68%; } }
+    @keyframes move4 { 0% { top: 26%; left: 29%; } 25% { top: 94%; left: 81%; } 50% { top: 68%; left: 98%; } 75% { top: 64%; left: 7%; } 100% { top: 26%; left: 29%; } }
+    @keyframes move5 { 0% { top: 68%; left: 81%; } 25% { top: 52%; left: 26%; } 50% { top: 72%; left: 57%; } 75% { top: 62%; left: 1%; } 100% { top: 68%; left: 81%; } }
+    @keyframes move6 { 0% { top: 65%; left: 13%; } 25% { top: 76%; left: 20%; } 50% { top: 88%; left: 54%; } 75% { top: 6%; left: 94%; } 100% { top: 65%; left: 13%; } }
+    @keyframes move7 { 0% { top: 69%; left: 99%; } 25% { top: 65%; left: 81%; } 50% { top: 83%; left: 75%; } 75% { top: 80%; left: 59%; } 100% { top: 69%; left: 99%; } }
+    @keyframes move8 { 0% { top: 48%; left: 65%; } 25% { top: 16%; left: 56%; } 50% { top: 71%; left: 0%; } 75% { top: 30%; left: 83%; } 100% { top: 48%; left: 65%; } }
+    @keyframes move9 { 0% { top: 41%; left: 15%; } 25% { top: 9%; left: 49%; } 50% { top: 30%; left: 27%; } 75% { top: 40%; left: 9%; } 100% { top: 41%; left: 15%; } }
+    @keyframes move10 { 0% { top: 39%; left: 33%; } 25% { top: 94%; left: 65%; } 50% { top: 63%; left: 99%; } 75% { top: 59%; left: 58%; } 100% { top: 39%; left: 33%; } }
+    @keyframes move11 { 0% { top: 64%; left: 46%; } 25% { top: 98%; left: 53%; } 50% { top: 88%; left: 93%; } 75% { top: 4%; left: 78%; } 100% { top: 64%; left: 46%; } }
+    @keyframes move12 { 0% { top: 68%; left: 77%; } 25% { top: 41%; left: 100%; } 50% { top: 81%; left: 55%; } 75% { top: 56%; left: 17%; } 100% { top: 68%; left: 77%; } }
+    @keyframes move13 { 0% { top: 4%; left: 4%; } 25% { top: 18%; left: 17%; } 50% { top: 93%; left: 4%; } 75% { top: 88%; left: 4%; } 100% { top: 4%; left: 4%; } }
+    @keyframes move14 { 0% { top: 8%; left: 27%; } 25% { top: 35%; left: 74%; } 50% { top: 26%; left: 26%; } 75% { top: 48%; left: 97%; } 100% { top: 8%; left: 27%; } }
+    @keyframes move15 { 0% { top: 59%; left: 81%; } 25% { top: 22%; left: 52%; } 50% { top: 96%; left: 85%; } 75% { top: 77%; left: 53%; } 100% { top: 59%; left: 81%; } }
 
-            <marquee behavior="alternate" direction="up" scrollamount="1" height="100%">
-                <marquee behavior="alternate" direction="left" scrollamount="2">Discord</marquee>
-            </marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2" height="100%">
-                <marquee behavior="alternate" direction="right" scrollamount="1">Movement</marquee>
-            </marquee>
-            <marquee behavior="slide" direction="right" scrollamount="1">Update</marquee>
-            <marquee behavior="scroll" direction="left" scrollamount="1">Bitcoin</marquee>
-            <marquee behavior="alternate" direction="up" scrollamount="2" height="100%">Comment</marquee>
-            <marquee behavior="scroll" direction="right" scrollamount="1">Virtual</marquee>
-            <marquee behavior="alternate" direction="down" scrollamount="2" height="100%">Club</marquee>
-            <marquee behavior="scroll" direction="left" scrollamount="1">Society</marquee>
-            <marquee behavior="alternate" direction="up" scrollamount="1" height="100%">
-                <marquee behavior="alternate" direction="right" scrollamount="2">Technology</marquee>
-            </marquee>
-            <marquee behavior="scroll" direction="down" scrollamount="2" height="100%">Video-call</marquee>
-            <marquee behavior="alternate" direction="left" scrollamount="1">Sport</marquee>
-        </div>
-        <p><b>Explain your word choices below:</b></p>
-        <textarea rows="3" name="explanation"></textarea>
-        <div class="button-container">
-            <button type="submit">📤 Submit</button>
-            <a href="index-3.html"><button type="button">Next ➔</button></a>
-            <a href="https://risatoohara.github.io/Interactive-2025/Projects/Project-01/index-1.html" target="_blank"><button type="button">If you like Bird</button></a>
-        </div>
-    </div>
-</body>
-</html>
+    /* Add more keyframes for the additional words */
+    .word16 { animation-name: move16; }
+    .word17 { animation-name: move17; }
+    /* ... (continue for words 18-39) ... */
+
+    @keyframes move16 { 0% { top: 33%; left: 92%; } 25% { top: 87%; left: 14%; } 50% { top: 19%; left: 61%; } 75% { top: 72%; left: 38%; } 100% { top: 33%; left: 92%; } }
+    @keyframes move17 { 0% { top: 95%; left: 7%; } 25% { top: 12%; left: 89%; } 50% { top: 54%; left: 42%; } 75% { top: 31%; left: 70%; } 100% { top: 95%; left: 7%; } }
+    /* ... (continue for words 18-39) ... */
+</style>
