@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Tag Exploration</title>
+    <title>Belonging Survey</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -21,7 +21,11 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        h2 {
+        .ascii-art {
+            font-family: monospace;
+            white-space: pre;
+            font-size: 10px;
+            line-height: 1.2;
             color: #4169e1;
             margin-bottom: 20px;
         }
@@ -30,73 +34,99 @@
             border-top: 2px solid #4169e1;
             margin: 20px 0;
         }
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 10px;
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
-        td {
-            background-color: #e6f2ff;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-        td:hover {
-            background-color: #cce5ff;
-        }
-        a {
-            text-decoration: none;
-            color: #4169e1;
+        label {
             font-weight: bold;
+            color: #4169e1;
         }
-        textarea {
+        textarea, input[type="text"] {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             resize: vertical;
         }
-        input[type="submit"], input[type="button"] {
+        button {
             background-color: #4169e1;
             color: white;
             border: none;
             padding: 10px 20px;
-            margin: 10px 5px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        input[type="submit"]:hover, input[type="button"]:hover {
+        button:hover {
             background-color: #3151b5;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>📱 Social Media Tag Exploration 🔖</h2>
+        <div class="ascii-art">
+   ___      _                _             ___                     
+  / __\    | |             (_)           / __\                    
+ / /  __ _ | | ___ _ __   __ _ _ __   __ \ \  _   _ _ ____   _____
+/ /__/ _` || |/ _ \ '_ \ / _` | '_ \ / _` \ \ | | | | '__\ \ / / _ \
+\____\__,_||_|\___/ .__/ \__,_|_| |_|\__,_/__) \__,_|_|   \_/ \___/
+                  | |                    
+                  |_|                    
+        </div>
         <hr>
-        <p><i>Explore hashtags and tags related to belonging on social media platforms:</i></p>
-        
-        <table>
-            <tr>
-                <td>📸 <a href="https://instagram.com" target="_blank">Instagram</a></td>
-                <td>🎵 <a href="https://tiktok.com" target="_blank">TikTok</a></td>
-            </tr>
-            <tr>
-                <td colspan="2">▶️ <a href="https://youtube.com" target="_blank">YouTube</a></td>
-            </tr>
-        </table>
-
-        <p><b>Document discovered hashtags and your thoughts below:</b></p>
-        <form>
-            <textarea rows="5" placeholder="Share your findings here..."></textarea>
-            <br><br>
-            
-            <input type="submit" value="📥 Save Draft">
-            <a href="index-1.html"><input type="button" value="↑ Back to Top"></a>
-            <a href="https://stacy1214.github.io/interactive-2025/Projects/Project-01/index.html"><input type="button" value="Icon"></a>
+        <form id="surveyForm" method="POST" action="YOUR_WEBAPP_URL">
+            <div>
+                <label for="belonging">What is belonging to you?</label>
+                <textarea id="belonging" name="belonging" rows="4" required></textarea>
+            </div>
+            <div>
+                <label for="online-belonging">What is online belonging to you?</label>
+                <textarea id="online-belonging" name="onlineBelonging" rows="4" required></textarea>
+            </div>
+            <div>
+                <label for="preferred-platform">What is your preferred online belonging platform?</label>
+                <input type="text" id="preferred-platform" name="preferredPlatform" required>
+            </div>
+            <div>
+                <label for="hard-platform">Was there a social media platform that made belonging hard? Why?</label>
+                <textarea id="hard-platform" name="hardPlatform" rows="4" required></textarea>
+            </div>
+            <div class="button-group">
+                <button type="submit">Submit</button>
+                <a href="index-2.html"><button type="button">Next ➔</button></a>
+                <a href="https://h20dg.github.io/Interactive-2025/Projects/Project-01/index-1.html"><button type="button">Drawing</button></a>
+            </div>
         </form>
     </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log('Success:', result);
+                alert('Form submitted successfully!');
+                this.reset(); // Reset the form after successful submission
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    </script>
 </body>
 </html>
