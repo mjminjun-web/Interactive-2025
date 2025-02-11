@@ -8,7 +8,7 @@
         .word-container {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 600px; /* Increased height */
             overflow: hidden;
         }
         .moving-word {
@@ -20,6 +20,8 @@
         .word1 { animation-name: move1; }
         .word2 { animation-name: move2; }
         .word3 { animation-name: move3; }
+        .word4 { animation-name: move4; }
+        .word5 { animation-name: move5; }
 
         @keyframes move1 {
             0% { top: 0; left: 0; }
@@ -37,14 +39,14 @@
             100% { top: 50%; left: 0; }
         }    
         @keyframes move4 {
-            0% { top: 30%; left: 60; }
+            0% { top: 30%; left: 60%; }
             50% { top: 10%; left: 10%; }
-            100% { top: 0%; left: 50; }
+            100% { top: 0%; left: 50%; }
         }
         @keyframes move5 {
             0% { top: 70%; left: 0; }
             50% { top: 30%; left: 100%; }
-            100% { top: 50%; left: 20; }
+            100% { top: 50%; left: 20%; }
         }
     </style>
 </head>
@@ -62,7 +64,7 @@
                             <label for="community">
                                 <marquee behavior="alternate">Culture</marquee>
                                 <marquee behavior="alternate">Video</marquee>
-                                <marquee behavior="scroll" direction="down" width="100" height="10">Privacy</marquee>
+                                <marquee behavior="scroll" direction="down" width="100" height="50">Privacy</marquee>
                             </label>
                         </td>
                         <td><label for="media"><marquee behavior="alternate" width="150">Media</marquee></label></td>
@@ -78,9 +80,8 @@
                     <tr>
                         <td><label for="expression"><marquee behavior="slide" direction="right" scrollamount="1">Expression</marquee></label></td>
                         <td><label for="support"><marquee behavior="scroll" direction="down" scrollamount="2" height="50">Support</marquee></label></td>
-                        <td><label for="support"><marquee behavior="scroll" direction="down" scrollamount="2" height="50">Tags</marquee></label></td>
+                        <td><label for="tags"><marquee behavior="scroll" direction="down" scrollamount="2" height="50">Tags</marquee></label></td>
                     </tr>
-
                 </table>
 
                 <span class="moving-word word1">Military</span>
@@ -93,9 +94,6 @@
                 </marquee>
                 <marquee behavior="scroll" direction="down" scrollamount="4">
                     <marquee behavior="alternate" direction="right" scrollamount="2">Movie</marquee>
-                </marquee>
-                <marquee behavior="scroll" direction="up" scrollamount="3">
-                    <marquee behavior="alternate" direction="right" scrollamount="5">Game</marquee>
                 </marquee>
                 <!-- Add more words here as needed -->
             </div>
