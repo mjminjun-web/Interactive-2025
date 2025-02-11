@@ -3,81 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belonging Survey</title>
+    <title>Social Media Tag Exploration</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4169e1;
+            margin-bottom: 20px;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #4169e1;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+        td {
+            background-color: #e6f2ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        td:hover {
+            background-color: #cce5ff;
+        }
+        a {
+            text-decoration: none;
+            color: #4169e1;
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        input[type="submit"], input[type="button"] {
+            background-color: #4169e1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover, input[type="button"]:hover {
+            background-color: #3151b5;
+        }
+    </style>
 </head>
 <body>
-    <center>
-        <pre>
-   ___      _                _             ___                     
-  / __\    | |             (_)           / __\                    
-          | | / ___ | | ___ _ _ __   __ _ _ __   __ \ \  _   _ _ ____    _____ /\  /\
-          | |-\/ _ \| |/ _ \ | '_ \ / _` | '_ \ / _` \ \ | | | | '__\ \ / / _ \\  \/ /
-         | |_| (/)/| | (_) / | | | | | (_| | | | | (_| |__) | |_| | |  \ V /  __/ \  /
-         \__/\___/ |_|\___/|_| |_| |_|\__,|_| |_|\__,_\___/ \__,_|_|    \_/ \___| / /
-                                 __/ |                                    __/ /
-                                |___/                                    |___/
-        </pre>
-        <hr width="80%">
-        <form id="surveyForm" method="POST" action="YOUR_WEBAPP_URL">
-            <table cellpadding="10">
-                <tr>
-                    <td><label for="belonging"><b>What is belonging to you?</b></label></td>
-                </tr>
-                <tr>
-                    <td><textarea id="belonging" name="belonging" rows="4" cols="50" required></textarea></td>
-                </tr>
-                <tr>
-                    <td><label for="online-belonging"><b>What is online belonging to you?</b></label></td>
-                </tr>
-                <tr>
-                    <td><textarea id="online-belonging" name="onlineBelonging" rows="4" cols="50" required></textarea></td>
-                </tr>
-                <tr>
-                    <td><label for="preferred-platform"><b>What is your preferred online belonging platform?</b></label></td>
-                </tr>
-                <tr>
-                    <td><input type="text" id="preferred-platform" name="preferredPlatform" size="50" required></td>
-                </tr>
-                <tr>
-                    <td><label for="hard-platform"><b>Was there a social media platform that made belonging hard? Why?</b></label></td>
-                </tr>
-                <tr>
-                    <td><textarea id="hard-platform" name="hardPlatform" rows="4" cols="50" required></textarea></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button type="submit">Submit</button>
-                        &nbsp;&nbsp;
-                        <a href="index-2.html"><button type="button">Next  ➔</button></a>
-                        &nbsp;&nbsp;
-                        <a href="https://h20dg.github.io/Interactive-2025/Projects/Project-01/index-1.html"><button type="button">Drawing</button></a>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </center>
+    <div class="container">
+        <h2>📱 Social Media Tag Exploration 🔖</h2>
+        <hr>
+        <p><i>Explore hashtags and tags related to belonging on social media platforms:</i></p>
+        
+        <table>
+            <tr>
+                <td>📸 <a href="https://instagram.com" target="_blank">Instagram</a></td>
+                <td>🎵 <a href="https://tiktok.com" target="_blank">TikTok</a></td>
+            </tr>
+            <tr>
+                <td colspan="2">▶️ <a href="https://youtube.com" target="_blank">YouTube</a></td>
+            </tr>
+        </table>
 
-    <script>
-        document.getElementById('surveyForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        <p><b>Document discovered hashtags and your thoughts below:</b></p>
+        <form>
+            <textarea rows="5" placeholder="Share your findings here..."></textarea>
+            <br><br>
             
-            var formData = new FormData(this);
-            
-            fetch(this.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(result => {
-                console.log('Success:', result);
-                alert('Form submitted successfully!');
-                this.reset(); // Reset the form after successful submission
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-            });
-        });
-    </script>
+            <input type="submit" value="📥 Save Draft">
+            <a href="index-1.html"><input type="button" value="↑ Back to Top"></a>
+            <a href="https://stacy1214.github.io/interactive-2025/Projects/Project-01/index.html"><input type="button" value="Icon"></a>
+        </form>
+    </div>
 </body>
 </html>
