@@ -31,3 +31,7 @@ h3{
 	font-family: sans-serif;
 }
 
+.main h3 a {
+	color: hotpink;
+	font-size: 10px;
+}
