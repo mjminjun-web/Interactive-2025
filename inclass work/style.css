@@ -1,6 +1,12 @@
-div.main{
+body{
 	width: 100vw;
 	height: 100vh;
+}
+
+
+div.main{
+	width: 100px;
+	height: 100px;
 	background-color: black;
 }
 
@@ -8,4 +14,10 @@ div#yellow{
 	width: 50%;
 	height: 50%;
 	background-color: yellow;
+}
+
+#red{
+	width: 50%;
+	height: 50%;
+	background-color: red;
 }
