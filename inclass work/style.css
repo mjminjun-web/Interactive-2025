@@ -1,37 +1,31 @@
-body{
-	width: 100vw;
-	height: 100vh;
-}
-
-
-div.main{
-	width: 100px;
-	height: 100px;
-	background-color: black;
-}
-
-div#yellow{
-	width: 50%;
-	height: 50%;
-	background-color: yellow;
-}
-
-#red{
-	width: 50%;
-	height: 50%;
-	background-color: red;
-}
-
-#red h3 a{
-	font-size: 40px;
-	color: white:
-}	
-
-h3{
+a{
 	font-family: sans-serif;
+	color: green;
+	font-size: 50px;
 }
 
-.main h3 a {
-	color: hotpink;
-	font-size: 10px;
+a:hover{
+	font-family: monospace;
+	color: purple;
+	font-size: 25px;
+}
+
+a:active{
+	color: white;
+	background-color: blue;
+	font-size: 100px;
+}
+
+div{
+	width: 500px;
+	height: 500px;
+	background-color: green;
+}
+
+div:before{
+	content: "\03a9";
+}
+
+div:after{
+	content: url(https://www.youtube.com/watch?v=yzCtDA6tHLo);
 }
