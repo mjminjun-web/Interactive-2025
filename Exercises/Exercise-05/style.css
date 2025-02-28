@@ -3,7 +3,8 @@ text-align: center;
 background: black;
 
 p {
-color: red;
+  text-align: center;
+  color: red;
 }
 
 title {
