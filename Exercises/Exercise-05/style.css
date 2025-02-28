@@ -1,6 +1,11 @@
-p.padding {
-	padding-left: 2cm;
+.home {
+    padding-left: 2cm;
 }
-p.padding2 {
-	padding-left: 50%;
+
+#important {
+    padding-left: 50%;
+}
+
+.button-group {
+    padding-left: 2cm;
 }
