@@ -7,3 +7,13 @@ alt {
   color: red;
 }
 
+div.main{
+background-color:black;
+width: 100vw;
+height: 100vh;
+}
+
+div#important[
+background-color:yellow;
+width:50%;
+height:50%;
