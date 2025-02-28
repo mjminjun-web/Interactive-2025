@@ -1,0 +1,27 @@
+body{
+	width: 100vw;
+	height: 100vh;
+}
+
+.container { 
+	width: 100px;
+	height: 100px;
+}
+
+.blue{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	border: 1px solid gray;
+}
+
+.blue-2{
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	border: 1px solid gray;
+	position: fixed;
+	bottom: 10px;
+	right: 50px;
+	display: inline-block;
+}
