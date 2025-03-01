@@ -1,0 +1,17 @@
+.blue{
+	width: 500px;
+	height: 500px;
+	background-color: blue;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.orange{
+	width: 500px;
+	height: 500px;
+	background-color: orange;
+	display: inline-block;
+	position: fixed;
+	top: 50px;
+	left: 50px;
+}
