@@ -1,0 +1,114 @@
+#animatedBox {
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    color: Yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    animation: multiAnimation 10s infinite;
+}
+
+#animatedBox-1 {
+    width: 250px;
+    height: 200px;
+    background-color: coral;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    animation: multiAnimation 10s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+#animatedBox-2 {
+    width: 200px;
+    height: 200px;
+    background-color: coral;
+    color: rosybrown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    animation: multiAnimation 20s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+#animatedBox-3 {
+    width: 200px;
+    height: 200px;
+    background-color: coral;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    animation: multiAnimation 10s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+#animatedBox-4 {
+    width: 200px;
+    height: 200px;
+    background-color: coral;
+    color: white;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 24px;
+    animation: multiAnimation 10s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+ @keyframes multiAnimation {
+    0% {
+        background-color: coral;
+        border-bottom-right-radius: 0;
+        box-shadow: 0 0 0 transparent;
+        margin: 0;
+        transform: scale(1);
+    }
+    25% {
+        background-color: lightblue;
+        border-bottom-right-radius: 100px;
+        box-shadow: 5px 10px 15px rgba(0, 0, 255, 0.5);
+        margin: 25px;
+        transform: scale(1.1);
+    }
+    50% {
+        background-color: lightgreen;
+        border-bottom-right-radius: 150px;
+        box-shadow: 10px 20px 50px blue;
+        margin: 50px;
+        transform: scale(1.2);
+    }
+    75% {
+        background-color: lightblue;
+        border-bottom-right-radius: 100px;
+        box-shadow: 5px 10px 15px rgba(0, 0, 255, 0.5);
+        margin: 25px;
+        transform: scale(1.1);
+    }
+    100% {
+        background-color: coral;
+        border-bottom-right-radius: 0;
+        box-shadow: 0 0 0 transparent;
+        margin: 0;
+        transform: scale(1);
+    }
+}
