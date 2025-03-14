@@ -1,21 +1,17 @@
 let splineViewer;
 
 function setup() {
+    let canvas = createCanvas(400, 400, WEBGL);
     canvas.parent('p5-container');
     
     // Initialize Spline viewer
     splineViewer = document.createElement('spline-viewer');
-    splineViewer.setAttribute('url', 'https://prod.spline.design/your-correct-scene-id/scene.splinecode');
-    document.body.appendChild(splineViewer);
+    splineViewer.setAttribute('url', 'https://prod.spline.design/untitled-8d5088ce0274cdfc2725af9c35331707/scene.splinecode');
+    document.getElementById('spline-container').appendChild(splineViewer);
 }
-
 
 function draw() {
     background(200);
     orbitControl();
     sphere();
-    
-    // You can interact with the Spline viewer here if needed
-    // For example, you could update its position based on p5.js mouse input
-    // splineViewer.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 }
