@@ -42,7 +42,7 @@
     width: 200px;
     height: 200px;
     background-color: coral;
-    color: white;
+    color: white;a
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,3 +112,66 @@ body {
         transform: scale(1);
     }
 }
+/* Your existing CSS code here */
+
+/* New animations */
+#animatedBox::after,
+#animatedBox-1::after,
+#animatedBox-2::after,
+#animatedBox-3::after,
+#animatedBox-4::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#animatedBox::after {
+    animation: bounce 2s infinite;
+}
+
+#animatedBox-1::after {
+    animation: rotate 3s linear infinite;
+}
+
+#animatedBox-2::after {
+    animation: zigzag 4s ease-in-out infinite;
+}
+
+#animatedBox-3::after {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+#animatedBox-4::after {
+    animation: spiral 5s linear infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(60px); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@keyframes zigzag {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(60px, -60px); }
+    50% { transform: translate(0, -120px); }
+    75% { transform: translate(-60px, -60px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+}
+
+@keyframes spiral {
+    0% { transform: rotate(0deg) translateX(10px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
