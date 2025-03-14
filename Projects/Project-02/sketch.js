@@ -1,11 +1,14 @@
 let splineViewer;
 
 function setup() {
-    let canvas = createCanvas(1000, 1000, WEBGL);
     canvas.parent('p5-container');
     
-    splineViewer = document.querySelector('spline-viewer');
+    // Initialize Spline viewer
+    splineViewer = document.createElement('spline-viewer');
+    splineViewer.setAttribute('url', 'https://prod.spline.design/your-correct-scene-id/scene.splinecode');
+    document.body.appendChild(splineViewer);
 }
+
 
 function draw() {
     background(200);
