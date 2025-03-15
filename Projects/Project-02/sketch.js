@@ -1,4 +1,4 @@
-let splineViewer;
+let splineViewer1;
 
 function setup() {
     splineViewer = document.querySelector('spline-viewer');
