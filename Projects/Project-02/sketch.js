@@ -1,15 +1,13 @@
 let splineViewer;
 
 function setup() {
-    let canvas = createCanvas(400, 400, WEBGL);
-    canvas.parent('p5-container');
-    
-    // Initialize Spline viewer
-    splineViewer = document.createElement('spline-viewer');
-    splineViewer.setAttribute('url', 'https://prod.spline.design/untitled-8d5088ce0274cdfc2725af9c35331707/scene.splinecode');
-    document.getElementById('spline-container').appendChild(splineViewer);
+    splineViewer = document.querySelector('spline-viewer');
+    splineViewer.addEventListener('load', onSplineLoad);
 }
 
-function draw() {
-    background(200);
- 
+function onSplineLoad() {
+    console.log('Spline scene loaded');
+    // You can add any additional functionality here
+}
+
+// No need for a draw function if you're not using p5.js for rendering
