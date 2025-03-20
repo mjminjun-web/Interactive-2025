@@ -1,14 +1,17 @@
-let splineViewer1;
+let splineViewer1, splineViewer2;
 
 function setup() {
-    splineViewer = document.querySelector('spline-viewer');
-    splineViewer.addEventListener('load', onSplineLoad);
+    splineViewer1 = document.querySelector('spline-viewer:nth-of-type(1)');
+    splineViewer2 = document.querySelector('spline-viewer:nth-of-type(2)');
+    
+    splineViewer1.addEventListener('load', () => onSplineLoad(1));
+    splineViewer2.addEventListener('load', () => onSplineLoad(2));
 }
 
-function onSplineLoad() {
-    console.log('Spline scene loaded');
+function onSplineLoad(viewerNumber) {
+    console.log(`Spline scene ${viewerNumber} loaded`);
     // You can add any additional functionality here
 }
 
-// No need for a draw function if you're not using p5.js for rendering
-
+// Call setup when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', setup);
