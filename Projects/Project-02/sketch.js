@@ -13,4 +13,5 @@ function onSplineLoad(viewerNumber) {
     // You can add any additional functionality here
 }
 
+// Call setup when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', setup);
