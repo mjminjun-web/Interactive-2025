@@ -13,5 +13,35 @@ function onSplineLoad(viewerNumber) {
     // You can add any additional functionality here
 }
 
+function getCurrentVisibleSection() {
+    const sections = document.querySelectorAll('.section');
+    for (let section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            return section;
+        }
+    }
+    return null;
+}
+
+function printVisibleSection() {
+    const visibleSection = getCurrentVisibleSection();
+    if (visibleSection) {
+        const printContent = visibleSection.innerHTML;
+        const originalContent = document.body.innerHTML;
+        document.body.innerHTML = printContent;
+        window.print();
+        document.body.innerHTML = originalContent;
+    }
+}
+
 // Call setup when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', setup);
+
+// Add event listener for Ctrl+P
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key === 'p') {
+        e.preventDefault();
+        printVisibleSection();
+    }
+});
