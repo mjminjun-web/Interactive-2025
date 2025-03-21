@@ -94,19 +94,50 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
+
+        .smithsonian-link {
+            display: flex;
+            align-items: center;
+            background-color: #3a506b;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .smithsonian-link:hover {
+            background-color: #5bc0be;
+        }
+
+        .smithsonian-link img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .smithsonian-link h1 {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="https://3d.si.edu/" class="smithsonian-link" target="_blank">
+            <img src="smithsonian_logo.png" alt="Smithsonian Logo">
+            <h1>Smithsonian 3D Museum</h1>
+        </a>
+
         <div class="ascii-art">
             <!-- Your ASCII art here -->
         </div>
 
-            <div class="button-group">
-                <button type="submit">Submit</button>
-                <a href="index.html"><button type="button">Next ➔</button></a>
-            </div>
-        </form>
+        <div class="button-group">
+            <a href="index.html"><button type="button">Next ➔</button></a>
+        </div>
     </div>
 
     <script>
