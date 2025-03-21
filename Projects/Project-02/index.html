@@ -99,6 +99,17 @@
             box-sizing: border-box;
             overflow-y: auto;
         }
+        @media (max-width: 1024px) {
+            .section {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .model_3d_container, .summary_container {
+                height: 50vh;
+                min-height: 400px;
+            }
+        }
+
 
         .summary_content {
             background-color: white;
