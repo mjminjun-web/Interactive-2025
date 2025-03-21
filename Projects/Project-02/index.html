@@ -136,15 +136,22 @@
             line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
-            .section {
-                grid-template-columns: 1fr;
-            }
 
-            .model_3d_container, .summary_container {
-                height: 50vh;
+        @media (max-width: 1024px) {
+            .spline-3d {
+                width: 90%;
+                height: 90%;
             }
         }
+
+        @media (max-width: 768px) {
+            .spline-3d {
+                width: 95%;
+                height: 95%;
+            }
+        }
+
+        
     </style>
 </head>
 <body>
