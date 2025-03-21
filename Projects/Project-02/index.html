@@ -91,31 +91,31 @@
         }
 
         .summary_container {
-            height: calc(100% - 80px);
-            padding: 20px;
-            box-sizing: border-box;
-      
-        }
-        @media (max-width: 1024px) {
-            .section {
-                grid-template-columns: 1fr;
-                height: auto;
-            }
-            .model_3d_container, .summary_container {
-                height: 50vh;
-                min-height: 400px;
-            }
+            position: relative;
+            overflow: hidden;
         }
 
+        .summary_container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('path/to/your/image.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: -1;
+        }
 
         .summary_content {
-         
-            padding: 25px;
-            height: calc(100% - 40px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
         }
+
 
         
         h5 {
