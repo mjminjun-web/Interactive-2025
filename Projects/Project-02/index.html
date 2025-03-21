@@ -121,6 +121,37 @@
             const section = document.getElementById(sectionId);
             section.scrollIntoView({ behavior: 'smooth' });
         }
+       
+        function getCurrentVisibleSection() {
+          const sections = document.querySelectorAll('.section');
+          for (let section of sections) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+             return section;
+            }
+          }
+        return null;
+        }
+
+        function printVisibleSection() {
+            const visibleSection = getCurrentVisibleSection();
+            if (visibleSection) {
+                const printContent = visibleSection.innerHTML;
+                const originalContent = document.body.innerHTML;
+                document.body.innerHTML = printContent;
+                window.print();
+                document.body.innerHTML = originalContent;
+            }
+        }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key === 'p') {
+      e.preventDefault();
+      printVisibleSection();
+    }
+  });
+</script>
+
     </script>
 </body>
 </html>
