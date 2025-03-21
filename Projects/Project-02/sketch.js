@@ -27,11 +27,34 @@ function getCurrentVisibleSection() {
 function printVisibleSection() {
     const visibleSection = getCurrentVisibleSection();
     if (visibleSection) {
-        const printContent = visibleSection.innerHTML;
-        const originalContent = document.body.innerHTML;
-        document.body.innerHTML = printContent;
-        window.print();
-        document.body.innerHTML = originalContent;
+        // Create a new window for printing
+        const printWindow = window.open('', '_blank');
+        
+        // Write the content to the new window
+        printWindow.document.write(`
+            <html>
+            <head>
+                <title>Print Section</title>
+                <style>
+                    body { margin: 0; padding: 20px; }
+                    .model_3d_container { width: 70%; height: 500px; } /* Adjust height as needed */
+                    .summary_container { width: 30%; }
+                    spline-viewer { width: 100%; height: 100%; }
+                </style>
+            </head>
+            <body>
+                ${visibleSection.outerHTML}
+                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.78/build/spline-viewer.js"></script>
+            </body>
+            </html>
+        `);
+        
+        // Wait for content to load, then print
+        printWindow.document.close();
+        printWindow.addEventListener('load', function() {
+            printWindow.print();
+            printWindow.close();
+        });
     }
 }
 
