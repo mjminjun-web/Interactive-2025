@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apollo 11 Command Module Viewer</title>
+    <title>3D Museum with Navigation</title>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.78/build/spline-viewer.js"></script>
     <style>
         body {
@@ -11,14 +11,51 @@
             padding: 0;
             font-family: Arial, sans-serif;
         }
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-title {
+            color: white;
+            font-size: 1.2em;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
         .section {
             display: flex;
             width: 100%;
             height: 100vh;
+            padding-top: 60px; /* Add padding to account for fixed nav */
         }
         .model_3d_container {
             width: 70%;
-            height: 100%;
+            height: calc(100% - 60px); /* Adjust height for nav */
         }
         spline-viewer {
             width: 100%;
@@ -26,7 +63,7 @@
         }
         .summary_container {
             width: 30%;
-            height: 100%;
+            height: calc(100% - 60px); /* Adjust height for nav */
             padding: 20px;
             box-sizing: border-box;
             overflow-y: auto;
@@ -44,7 +81,17 @@
     </style>
 </head>
 <body>
-    <div class="section">
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-title">3D Museum</div>
+            <div class="nav-buttons">
+                <button class="nav-button" onclick="scrollToSection('space')">Space</button>
+                <button class="nav-button" onclick="scrollToSection('asian')">Asian</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="space" class="section">
         <div class="model_3d_container">
             <spline-viewer url="https://prod.spline.design/B0AM68c6yJ69t3Gs/scene.splinecode"></spline-viewer>
         </div>
@@ -56,7 +103,7 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div id="asian" class="section">
         <div class="model_3d_container">
             <spline-viewer url="https://prod.spline.design/xUuQw5ypPZT3b2M5/scene.splinecode"></spline-viewer>
         </div>
@@ -69,6 +116,11 @@
         </div>
     </div>
 
-    <script src="sketch.js"></script>
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
