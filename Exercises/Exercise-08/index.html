@@ -10,6 +10,14 @@
             padding: 0;
             background: #fffdfa;
             font-family: Arial, sans-serif;
+
+            /* Local background image */
+            background-image: url('Michelin Guide Guide.png'); /* <-- your local image path */
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #fffdfa;
         }
         header {
             text-align: center;
@@ -43,6 +51,9 @@
             header {
                 padding: 1rem 0.5rem;
             }
+            body {
+                background-attachment: scroll;
+            }
         }
     </style>
 </head>
@@ -53,12 +64,10 @@
         Scroll through our gallery of top restaurants!</p>
     </header>
     <div class="content">
-        <!-- Replace the src attributes with your actual Michelin restaurant images -->
-        <img src="le-bernardin.jpg" alt="Le Bernardin">
-        <img src="eleven-madison-park.jpg" alt="Eleven Madison Park">
-        <img src="per-se.jpg" alt="Per Se">
-        <img src="atomix_nyc.jpg" alt="Atomix">        
-        <!-- Add more images as needed -->
+        <img src="images/le-bernardin.jpg" alt="Le Bernardin">
+        <img src="images/eleven-madison-park.jpg" alt="Eleven Madison Park">
+        <img src="images/per-se.jpg" alt="Per Se">
+        <img src="images/atomix_nyc.jpg" alt="Atomix">        
     </div>
 </body>
 </html>
