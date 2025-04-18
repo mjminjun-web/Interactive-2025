@@ -1,105 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
-
-
-body {
-  font-family: 'Montserrat', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #fffdfa;
-  color: #222;
-}
-
-header {
-  text-align: center;
-  padding: 2rem 1rem 1rem 1rem;
-}
-
-.intro {
-  font-size: 1.2rem;
-  color: #666;
-}
-
-.featured-image img {
+img {
+  width: 50%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: block;
-  margin: 2rem auto;
-  max-width: 80%;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.restaurant-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  padding: 2rem 1rem;
-}
-
-.restaurant {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  padding: 1.5rem;
-  width: 320px;
-  max-width: 90vw;
-  transition: box-shadow 0.2s;
-}
-.restaurant:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.14);
-}
-
-/* Tablet (iPad) */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .featured-image img {
-    max-width: 90%;
-  }
-  .restaurant-list {
-    gap: 1.5rem;
-    padding: 1.5rem 1rem;
-  }
-  .restaurant {
-    width: 260px;
-    padding: 1rem;
-  }
-  .intro {
-    font-size: 1rem;
+/* Tablet: 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  img {
+    width: 70%;
   }
 }
 
-/* Mobile */
-@media screen and (max-width: 768px) {
-  header {
-    padding: 1rem 0.5rem;
-  }
-  .featured-image img {
-    max-width: 100%;
-    margin: 1rem 0;
-  }
-  .restaurant-list {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0.5rem;
-  }
-  .restaurant {
-    width: 100%;
-    max-width: 100%;
-    padding: 1rem 0.5rem;
-  }
-  .intro {
-    font-size: 0.95rem;
-  }
-}
-
-/* Orientation */
-@media (orientation: landscape) and (max-width: 768px) {
-  .restaurant-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  .restaurant {
-    width: 45vw;
-    min-width: 200px;
-    margin: 0.5rem;
+/* Mobile: up to 767px */
+@media (max-width: 767px) {
+  img {
+    width: 95%;
   }
 }
