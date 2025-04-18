@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Michelin Restaurants in NYC - Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fffdfa;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            padding: 2rem 1rem 1rem 1rem;
+        }
+        .intro {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .content {
+            padding: 1rem;
+            text-align: center;
+        }
+        img {
+            width: 50%;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 768px) {
+            img {
+                width: 90%;
+            }
+            .intro {
+                font-size: 1rem;
+            }
+            header {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Michelin Restaurants in NYC</h1>
+        <p class="intro">Explore the finest Michelin-starred dining experiences in New York City.<br>
+        Scroll through our gallery of top restaurants!</p>
+    </header>
+    <div class="content">
+        <!-- Replace the src attributes with your actual Michelin restaurant images -->
+        <img src="le-bernardin.jpg" alt="Le Bernardin">
+        <img src="eleven-madison-park.jpg" alt="Eleven Madison Park">
+        <img src="per-se.jpg" alt="Per Se">
+        <img src="atomix_nyc.jpg" alt="Atomix">        
+        <!-- Add more images as needed -->
+    </div>
+</body>
+</html>
