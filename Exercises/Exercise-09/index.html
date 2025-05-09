@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .calendar {
+            width: 90%;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header .month {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header .year {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .weekdays, .dates {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .weekdays div, .dates div {
+            width: calc(100% / 7);
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .weekdays {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
+
+        .dates div {
+            border: 1px solid #ddd;
+            margin: -1px 0 0 -1px;
+            background: #fff;
+        }
+
+        .dates div:hover {
+            background: #e0f7fa;
+            cursor: pointer;
+        }
+
+        .dates .today {
+            background: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <div class="header">
+            <div class="month">October</div>
+            <div class="year">2023</div>
+        </div>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="dates">
+            <div></div><div></div><div></div><div></div><div></div><div>1</div><div>2</div>
+            <div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+            <div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div>
+            <div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div>
+            <div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div>
+            <div>31</div>
+        </div>
+    </div>
+</body>
+</html>
