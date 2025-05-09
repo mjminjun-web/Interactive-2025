@@ -4,173 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Exploration: Online Belonging</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        h2 {
-            margin-top: 0;
-            text-align: center;
-        }
-        .word-container {
-            position: relative;
-            width: 100%;
-            height: 70vh;
-            overflow: hidden;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-        }
-        .moving-word {
-            position: absolute;
-            animation-duration: 29s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            font-size: 16px;
-        }
-        .word1 { animation-name: move1; }
-        .word2 { animation-name: move2; }
-        .word3 { animation-name: move3; }
-        .word4 { animation-name: move4; }
-        .word5 { animation-name: move5; }
-        .word6 { animation-name: move6; }
-        .word7 { animation-name: move7; }
-        .word8 { animation-name: move8; }
-        .word9 { animation-name: move9; }
-        .word10 { animation-name: move10; }
-        .word11 { animation-name: move11; }
-        .word12 { animation-name: move12; }
-        .word13 { animation-name: move13; }
-        .word14 { animation-name: move14; }
-        .word15 { animation-name: move15; }
-        .word16 { animation-name: move16; }
-        .word17 { animation-name: move17; }
-        .word18 { animation-name: move18; }
-        .word19 { animation-name: move19; }
-        .word20 { animation-name: move20; }
-        .word21 { animation-name: move21; }
-        .word22 { animation-name: move22; }
-        .word23 { animation-name: move23; }
-        .word24 { animation-name: move24; }
-        .word25 { animation-name: move25; }
-        .word26 { animation-name: move26; }
-        .word27 { animation-name: move27; }
-        .word28 { animation-name: move28; }
-        .word29 { animation-name: move29; }
-        .word30 { animation-name: move30; }
-        .word31 { animation-name: move31; }
-        .word32 { animation-name: move32; }
-        .word33 { animation-name: move33; }
-        .word34 { animation-name: move34; }
-        .word35 { animation-name: move35; }
-        .word36 { animation-name: move36; }
-        .word37 { animation-name: move37; }
-        .word38 { animation-name: move38; }
-        .word39 { animation-name: move39; }
-
-        @keyframes move1 { 0% { top: 0%; left: 0%; } 25% { top: 75%; left: 25%; } 50% { top: 50%; left: 100%; } 75% { top: 25%; left: 75%; } 100% { top: 0%; left: 0%; } }
-        @keyframes move2 { 0% { top: 100%; left: 100%; } 25% { top: 25%; left: 75%; } 50% { top: 0%; left: 50%; } 75% { top: 75%; left: 25%; } 100% { top: 100%; left: 100%; } }
-        @keyframes move3 { 0% { top: 50%; left: 0%; } 25% { top: 0%; left: 50%; } 50% { top: 100%; left: 100%; } 75% { top: 50%; left: 50%; } 100% { top: 50%; left: 0%; } }
-        @keyframes move4 { 0% { top: 25%; left: 75%; } 25% { top: 100%; left: 25%; } 50% { top: 75%; left: 0%; } 75% { top: 0%; left: 100%; } 100% { top: 25%; left: 75%; } }
-        @keyframes move5 { 0% { top: 5%; left: 10%; } 25% { top: 30%; left: 100%; } 50% { top: 25%; left: 45%; } 75% { top: 100%; left: 0%; } 100% { top: 45%; left: 25%; } }
-        @keyframes move6 { 0% { top: 0%; left: 50%; } 25% { top: 100%; left: 75%; } 50% { top: 50%; left: 25%; } 75% { top: 25%; left: 0%; } 100% { top: 0%; left: 50%; } }
-        @keyframes move7 { 0% { top: 100%; left: 0%; } 25% { top: 25%; left: 50%; } 50% { top: 0%; left: 100%; } 75% { top: 75%; left: 75%; } 100% { top: 100%; left: 0%; } }
-        @keyframes move8 { 0% { top: 50%; left: 100%; } 25% { top: 75%; left: 0%; } 50% { top: 100%; left: 50%; } 75% { top: 0%; left: 25%; } 100% { top: 50%; left: 100%; } }
-        @keyframes move9 { 0% { top: 25%; left: 25%; } 25% { top: 0%; left: 75%; } 50% { top: 75%; left: 50%; } 75% { top: 100%; left: 100%; } 100% { top: 25%; left: 25%; } }
-        @keyframes move10 { 0% { top: 75%; left: 75%; } 25% { top: 50%; left: 0%; } 50% { top: 25%; left: 100%; } 75% { top: 0%; left: 50%; } 100% { top: 75%; left: 75%; } }
-        @keyframes move11 { 0% { top: 0%; left: 100%; } 25% { top: 100%; left: 50%; } 50% { top: 50%; left: 75%; } 75% { top: 25%; left: 25%; } 100% { top: 0%; left: 100%; } }
-        @keyframes move12 { 0% { top: 100%; left: 50%; } 25% { top: 25%; left: 100%; } 50% { top: 0%; left: 25%; } 75% { top: 75%; left: 0%; } 100% { top: 100%; left: 50%; } }
-        @keyframes move13 { 0% { top: 50%; left: 25%; } 25% { top: 75%; left: 100%; } 50% { top: 100%; left: 0%; } 75% { top: 0%; left: 75%; } 100% { top: 50%; left: 25%; } }
-        @keyframes move14 { 0% { top: 25%; left: 0%; } 25% { top: 0%; left: 25%; } 50% { top: 75%; left: 75%; } 75% { top: 100%; left: 25%; } 100% { top: 25%; left: 0%; } }
-        @keyframes move15 { 0% { top: 75%; left: 50%; } 25% { top: 50%; left: 75%; } 50% { top: 25%; left: 0%; } 75% { top: 50%; left: 100%; } 100% { top: 75%; left: 50%; } }
-        @keyframes move16 { 0% { top: 0%; left: 0%; } 25% { top: 100%; left: 100%; } 50% { top: 50%; left: 50%; } 75% { top: 0%; left: 100%; } 100% { top: 0%; left: 0%; } }
-        @keyframes move17 { 0% { top: 80%; left: 90%; } 25% { top: 0%; left: 5%; } 50% { top: 50%; left: 50%; } 65% { top: 100%; left: 40%; } 100% { top: 100%; left: 100%; } }
-        @keyframes move18 { 0% { top: 50%; left: 50%; } 25% { top: 100%; left: 0%; } 50% { top: 0%; left: 100%; } 75% { top: 100%; left: 100%; } 100% { top: 50%; left: 50%; } }
-        @keyframes move19 { 0% { top: 0%; left: 100%; } 25% { top: 100%; left: 100%; } 50% { top: 100%; left: 0%; } 75% { top: 0%; left: 0%; } 100% { top: 0%; left: 100%; } }
-        @keyframes move20 { 0% { top: 75%; left: 0%; } 25% { top: 0%; left: 10%; } 50% { top: 5%; left: 100%; } 75% { top: 100%; left: 70%; } 100% { top: 100%; left: 0%; } }
-        @keyframes move21 { 0% { top: 25%; left: 25%; } 25% { top: 75%; left: 75%; } 50% { top: 25%; left: 75%; } 75% { top: 75%; left: 25%; } 100% { top: 25%; left: 25%; } }
-        @keyframes move22 { 0% { top: 75%; left: 75%; } 25% { top: 25%; left: 25%; } 50% { top: 75%; left: 25%; } 75% { top: 25%; left: 75%; } 100% { top: 75%; left: 75%; } }
-        @keyframes move23 { 0% { top: 25%; left: 75%; } 25% { top: 75%; left: 25%; } 50% { top: 25%; left: 25%; } 75% { top: 75%; left: 75%; } 100% { top: 25%; left: 75%; } }
-        @keyframes move24 { 0% { top: 75%; left: 25%; } 25% { top: 25%; left: 75%; } 50% { top: 75%; left: 75%; } 75% { top: 25%; left: 25%; } 100% { top: 75%; left: 25%; } }
-        @keyframes move25 { 0% { top: 30%; left: 0%; } 25% { top: 0%; left: 50%; } 50% { top: 40%; left: 100%; } 75% { top: 90%; left: 10%; } 100% { top: 50%; left: 0%; } }
-        @keyframes move26 { 0% { top: 0%; left: 50%; } 25% { top: 50%; left: 100%; } 50% { top: 100%; left: 50%; } 75% { top: 50%; left: 0%; } 100% { top: 0%; left: 50%; } }
-        @keyframes move27 { 0% { top: 50%; left: 100%; } 25% { top: 100%; left: 50%; } 50% { top: 50%; left: 0%; } 75% { top: 0%; left: 50%; } 100% { top: 50%; left: 100%; } }
-        @keyframes move28 { 0% { top: 100%; left: 50%; } 25% { top: 50%; left: 0%; } 50% { top: 0%; left: 50%; } 75% { top: 50%; left: 100%; } 100% { top: 100%; left: 50%; } }
-        @keyframes move29 { 0% { top: 0%; left: 0%; } 25% { top: 0%; left: 100%; } 50% { top: 100%; left: 100%; } 75% { top: 100%; left: 0%; } 100% { top: 0%; left: 0%; } }
-        @keyframes move30 { 0% { top: 0%; left: 100%; } 25% { top: 100%; left: 100%; } 50% { top: 100%; left: 0%; } 75% { top: 0%; left: 0%; } 100% { top: 0%; left: 100%; } }
-        @keyframes move31 { 0% { top: 100%; left: 100%; } 25% { top: 100%; left: 0%; } 50% { top: 0%; left: 0%; } 75% { top: 0%; left: 100%; } 100% { top: 30%; left: 100%; } }
-        @keyframes move32 { 0% { top: 100%; left: 0%; } 25% { top: 0%; left: 0%; } 50% { top: 0%; left: 100%; } 75% { top: 100%; left: 100%; } 100% { top: 100%; left: 0%; } }
-        @keyframes move33 { 0% { top: 50%; left: 50%; } 25% { top: 0%; left: 0%; } 50% { top: 50%; left: 50%; } 75% { top: 100%; left: 100%; } 100% { top: 50%; left: 50%; } }
-        @keyframes move34 { 0% { top: 15%; left: 0%; } 25% { top: 50%; left: 50%; } 50% { top: 100%; left: 100%; } 75% { top: 40%; left: 60%; } 100% { top: 0%; left: 0%; } }
-        @keyframes move35 { 0% { top: 100%; left: 100%; } 25% { top: 50%; left: 50%; } 50% { top: 10%; left: 0%; } 75% { top: 50%; left: 50%; } 100% { top: 100%; left: 100%; } }
-        @keyframes move36 { 0% { top: 0%; left: 100%; } 25% { top: 100%; left: 0%; } 50% { top: 0%; left: 0%; } 75% { top: 100%; left: 100%; } 100% { top: 0%; left: 100%; } }
-        @keyframes move37 { 0% { top: 0%; left: 0%; } 50% { top: 100%; left: 60%; } 100% { top: 0%; left: 0%; } }
-        @keyframes move38 { 0% { top: 100%; left: 0%; } 50% { top: 0%; left: 100%; } 100% { top: 100%; left: 0%; } }
-        @keyframes move39 { 0% { top: 50%; left: 50%; } 50% { top: 100%; left: 100%; } 100% { top: 50%; left: 50%; } }
-
-    </style>
 </head>
 <body>
-    <div class="container">
+    <div style="text-align: center;">
         <h2>Word Exploration: Online Belonging</h2>
-            <p style="color:red;">Please take picture of response!!!</p>
-        <div class="word-container">
-            <div class="moving-word word1">Community</div>
-            <div class="moving-word word2">Connection</div>
-            <div class="moving-word word3">Identity</div>
-            <div class="moving-word word4">Support</div>
-            <div class="moving-word word5">Engagement</div>
-            <div class="moving-word word6">Friendship</div>
-            <div class="moving-word word7">Trust</div>
-            <div class="moving-word word8">Communication</div>
-            <div class="moving-word word9">Acceptance</div>
-            <div class="moving-word word10">Diversity</div>
-            <div class="moving-word word11">Inclusion</div>
-            <div class="moving-word word12">Networking</div>
-            <div class="moving-word word13">Collaboration</div>
-            <div class="moving-word word14">Safety</div>
-            <div class="moving-word word15">Shared Values</div>
-            <div class="moving-word word16">Online Presence</div>
-            <div class="moving-word word17">Virtual Space</div>
-            <div class="moving-word word18">Digital Identity</div>
-            <div class="moving-word word19">Expression</div>
-            <div class="moving-word word20">Creativity</div>
-            <div class="moving-word word21">Social Media</div>
-            <div class="moving-word word22">Groups</div>
-            <div class="moving-word word23">Belonging</div>
-            <div class="moving-word word24">Interaction</div>
-            <div class="moving-word word25">Participation</div>
-            <div class="moving-word word26">Understanding</div>
-            <div class="moving-word word27">Friendliness</div>
-            <div class="moving-word word28">Compassion</div>
-            <div class="moving-word word29">Empathy</div>
-            <div class="moving-word word30">Supportive</div>
-            <div class="moving-word word31">Respect</div>
-            <div class="moving-word word32">Involvement</div>
-            <div class="moving-word word33">Connectivity</div>
-            <div class="moving-word word34">Authenticity</div>
-            <div class="moving-word word35">Trustworthiness</div>
-            <div class="moving-word word36">Hope</div>
-            <div class="moving-word word37">Growth</div>
-            <div class="moving-word word38">Comfort</div>
-            <div class="moving-word word39">Togetherness</div>
+        <p style="color: red;">Please take a picture of your response!!!</p>
     </div>
-        <p><b>Choose 3 Words!!! 
-        Explain your word choices below:</b></p>
-        <textarea rows="3" name="explanation"></textarea>
-        <div class="button-container">
+    <div style="position: relative; width: 100%; height: 70vh; border: 1px solid #ccc; overflow: hidden;">
+        <div style="position: absolute; top: 10%; left: 20%;">Community</div>
+        <div style="position: absolute; top: 30%; left: 50%;">Connection</div>
+        <div style="position: absolute; top: 50%; left: 10%;">Identity</div>
+        <div style="position: absolute; top: 70%; left: 40%;">Support</div>
+        <div style="position: absolute; top: 20%; left: 80%;">Engagement</div>
+        <div style="position: absolute; top: 60%; left: 70%;">Friendship</div>
+        <div style="position: absolute; top: 40%; left: 30%;">Trust</div>
+        <div style="position: absolute; top: 15%; left: 60%;">Communication</div>
+        <div style="position: absolute; top: 55%; left: 90%;">Acceptance</div>
+        <div style="position: absolute; top: 35%; left: 5%;">Diversity</div>
+        <div style="position: absolute; top: 25%; left: 75%;">Inclusion</div>
+        <div style="position: absolute; top: 65%; left: 50%;">Networking</div>
+        <div style="position: absolute; top: 45%; left: 20%;">Collaboration</div>
+        <div style="position: absolute; top: 5%; left: 10%;">Safety</div>
+        <div style="position: absolute; top: 85%; left: 30%;">Shared Values</div>
+        <div style="position: absolute; top: 75%; left: 60%;">Online Presence</div>
+        <div style="position: absolute; top: 10%; left: 40%;">Virtual Space</div>
+        <div style="position: absolute; top: 50%; left: 80%;">Digital Identity</div>
+        <div style="position: absolute; top: 20%; left: 15%;">Expression</div>
+        <div style="position: absolute; top: 30%; left: 65%;">Creativity</div>
+        <div style="position: absolute; top: 70%; left: 5%;">Social Media</div>
+        <div style="position: absolute; top: 40%; left: 85%;">Groups</div>
+        <div style="position: absolute; top: 60%; left: 35%;">Belonging</div>
+        <div style="position: absolute; top: 25%; left: 55%;">Interaction</div>
+        <div style="position: absolute; top: 15%; left: 25%;">Participation</div>
+        <div style="position: absolute; top: 45%; left: 75%;">Understanding</div>
+        <div style="position: absolute; top: 35%; left: 95%;">Friendliness</div>
+        <div style="position: absolute; top: 65%; left: 15%;">Compassion</div>
+        <div style="position: absolute; top: 85%; left: 45%;">Empathy</div>
+        <div style="position: absolute; top: 5%; left: 70%;">Supportive</div>
+        <div style="position: absolute; top: 55%; left: 25%;">Respect</div>
+        <div style="position: absolute; top: 75%; left: 90%;">Involvement</div>
+        <div style="position: absolute; top: 35%; left: 40%;">Connectivity</div>
+        <div style="position: absolute; top: 15%; left: 50%;">Authenticity</div>
+        <div style="position: absolute; top: 45%; left: 10%;">Trustworthiness</div>
+        <div style="position: absolute; top: 65%; left: 85%;">Hope</div>
+        <div style="position: absolute; top: 25%; left: 35%;">Growth</div>
+        <div style="position: absolute; top: 85%; left: 75%;">Comfort</div>
+        <div style="position: absolute; top: 5%; left: 5%;">Togetherness</div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <p><b>Choose 3 Words!!! Explain your word choices below:</b></p>
+        <textarea rows="3" style="width: 80%;"></textarea>
+        <div style="margin-top: 20px;">
             <button type="submit">📤 Submit</button>
             <a href="index-3.html"><button type="button">Next ➔</button></a>
-           
         </div>
+    </div>
 </body>
 </html>
