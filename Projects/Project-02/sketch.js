@@ -6,11 +6,33 @@ function setup() {
     
     splineViewer1.addEventListener('load', () => onSplineLoad(1));
     splineViewer2.addEventListener('load', () => onSplineLoad(2));
+    
+    // Add hover effects for spline viewers
+    addHoverEffects(splineViewer1);
+    addHoverEffects(splineViewer2);
 }
 
 function onSplineLoad(viewerNumber) {
     console.log(`Spline scene ${viewerNumber} loaded`);
-    // You can add any additional functionality here
+    // Add a subtle animation to indicate the scene is ready
+    const viewer = viewerNumber === 1 ? splineViewer1 : splineViewer2;
+    viewer.style.transition = 'transform 0.5s ease';
+    viewer.style.transform = 'scale(1.05)';
+    setTimeout(() => {
+        viewer.style.transform = 'scale(1)';
+    }, 500);
+}
+
+function addHoverEffects(viewer) {
+    viewer.addEventListener('mouseenter', () => {
+        viewer.style.transition = 'box-shadow 0.3s ease, transform 0.3s ease';
+        viewer.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.3)';
+        viewer.style.transform = 'scale(1.02)';
+    });
+    viewer.addEventListener('mouseleave', () => {
+        viewer.style.boxShadow = 'none';
+        viewer.style.transform = 'scale(1)';
+    });
 }
 
 function getCurrentVisibleSection() {
@@ -36,10 +58,33 @@ function printVisibleSection() {
             <head>
                 <title>Print Section</title>
                 <style>
-                    body { margin: 0; padding: 20px; }
-                    .model_3d_container { width: 70%; height: 500px; } /* Adjust height as needed */
-                    .summary_container { width: 30%; }
-                    spline-viewer { width: 100%; height: 100%; }
+                    body { 
+                        margin: 0; 
+                        padding: 20px; 
+                        font-family: Arial, sans-serif; 
+                        background: linear-gradient(135deg, #f0f8ff, #add8e6); 
+                        color: #333; 
+                    }
+                    .model_3d_container { 
+                        width: 70%; 
+                        height: 500px; 
+                        border: 2px solid #ccc; 
+                        border-radius: 10px; 
+                        overflow: hidden; 
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+                    }
+                    .summary_container { 
+                        width: 30%; 
+                        padding: 10px; 
+                        background: #f9f9f9; 
+                        border-radius: 10px; 
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+                    }
+                    spline-viewer { 
+                        width: 100%; 
+                        height: 100%; 
+                        border-radius: 10px; 
+                    }
                 </style>
             </head>
             <body>
