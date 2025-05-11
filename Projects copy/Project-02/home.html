@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3a506b;
+            --secondary-color: #5bc0be;
+            --text-color: #1c2541;
+            --background-color: #edf2f4;
+        }
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+
+        hr {
+            border: none;
+            border-top: 2px solid var(--secondary-color);
+            margin: 20px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label1 {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        label2 {
+            font-weight: bold;
+            color: #FF0000;
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .smithsonian-link {
+            display: flex;
+            align-items: center;
+            background-color: #3a506b;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .smithsonian-link:hover {
+            background-color: #5bc0be;
+        }
+
+        .smithsonian-link img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .smithsonian-link h1 {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="Smithsonian.png" alt="Your Logo">
+        </div>
+
+       
+        </a>
+    <div class="container">
+        <a href="https://3d.si.edu/" class="smithsonian-link" target="_blank">
+            <h1>Smithsonian 3D Museum</h1>
+        </a>
+
+        <div class="ascii-art">
+            <!-- Your ASCII art here -->
+        </div>
+
+        <div class="button-group">
+            <a href="index.html"><button type="button">Next ➔</button></a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log('Success:', result);
+                alert('Form submitted successfully!');
+                this.reset(); // Reset the form after successful submission
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

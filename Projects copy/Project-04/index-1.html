@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belonging Survey</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .ascii-art {
+            font-family: monospace;
+            white-space: pre;
+            font-size: 10px;
+            line-height: 1.2;
+            color: #4169e1;
+            margin-bottom: 20px;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #4169e1;
+            margin: 20px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        label1{
+            font-weight: bold;
+            color: #4169e1;
+        }
+        lable2{
+            font-weight: bold;
+            color: #FF0000;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        button {
+            background-color: #4169e1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #3151b5;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ascii-art">
+  ____       _                   _                _____                            
+ |  _ \     | |                 (_)              / ____|                           
+ | |_) | ___| | ___  _ __   __ _ _ _ __   __ _  | (___  _   _ _ ____   _____ _   _ 
+ |  _ < / _ \ |/ _ \| '_ \ / _` | | '_ \ / _` |  \___ \| | | | '__\ \ / / _ \ | | |
+ | |_) |  __/ | (_) | | | | (_| | | | | | (_| |  ____) | |_| | |   \ V /  __/ |_| |
+ |____/ \___|_|\___/|_| |_|\__, |_|_| |_|\__, | |_____/ \__,_|_|    \_/ \___|\__, |
+                            __/ |         __/ |                               __/ |
+                           |___/         |___/                               |___/         
+
+<lable2>Please take picture of response!!!</lable2>           
+        </div>
+        <hr>
+        <form id="surveyForm" method="POST" action="YOUR_WEBAPP_URL">
+            <div>
+                <label1 for="belonging">What is belonging to you?</label1>
+
+
+                <textarea id="belonging" name="belonging" rows="4" required></textarea>
+            </div>
+            <div>
+                <label1 for="online-belonging">What is online belonging to you?</label1>
+                <textarea id="online-belonging" name="onlineBelonging" rows="4" required></textarea>
+            </div>
+            <div>
+                <label1 for="preferred-platform">What is your preferred online belonging platform?</label1>
+                <input type="text" id="preferred-platform" name="preferredPlatform" required>
+            </div>
+            <div>
+                <label1 for="hard-platform">Was there a social media platform that made belonging hard? Why?</label1>
+                <textarea id="hard-platform" name="hardPlatform" rows="4" required></textarea>
+            </div>
+            <div class="button-group">
+                <button type="submit">Submit</button>
+                <a href="index-2.html"><button type="button">Next ➔</button></a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log('Success:', result);
+                alert('Form submitted successfully!');
+                this.reset(); // Reset the form after successful submission
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

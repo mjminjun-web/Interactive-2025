@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belonging Survey</title>
+</head>
+<body>
+    <div>
+        <div>
+            <pre>
+  ____       _                   _                _____                            
+ |  _ \     | |                 (_)              / ____|                           
+ | |_) | ___| | ___  _ __   __ _ _ _ __   __ _  | (___  _   _ _ ____   _____ _   _ 
+ |  _ < / _ \ |/ _ \| '_ \ / _` | | '_ \ / _` |  \___ \| | | | '__\ \ / / _ \ | | |
+ | |_) |  __/ | (_) | | | | (_| | | | | | (_| |  ____) | |_| | |   \ V /  __/ |_| |
+ |____/ \___|_|\___/|_| |_|\__, |_|_| |_|\__, | |_____/ \__,_|_|    \_/ \___|\__, |
+                            __/ |         __/ |                               __/ |
+                           |___/         |___/                               |___/         
+            </pre>
+            <label>Please take a picture of your response!!!</label>
+        </div>
+        <hr>
+        <form id="surveyForm" method="POST" action="YOUR_WEBAPP_URL">
+            <div>
+                <label for="belonging">What is belonging to you?</label>
+                <textarea id="belonging" name="belonging" rows="4" required></textarea>
+            </div>
+            <br><br>
+            <div style="margin-left: 20px;">
+                <label for="online-belonging">What is online belonging to you?</label>
+                <textarea id="online-belonging" name="onlineBelonging" rows="4" required></textarea>
+            </div>
+            <br><br>
+            <div style="margin-left: 40px;">
+                <label for="preferred-platform">What is your preferred online belonging platform?</label>
+                <input type="text" id="preferred-platform" name="preferredPlatform" required>
+            </div>
+            <br><br>
+            <div style="margin-left: 60px;">
+                <label for="hard-platform">Was there a social media platform that made belonging hard? Why?</label>
+                <textarea id="hard-platform" name="hardPlatform" rows="4" required></textarea>
+            </div>
+            <br><br>
+            <div style="margin-left: 80px;">
+                <button type="submit">Submit</button>
+                <a href="index-2.html"><button type="button">Next ➔</button></a>
+            </div>
+            <br><br>
+            <div style="margin-left: 100px;">
+                <a href="https://zningz.github.io/Interactive-2025/Projects/Project-01/index.html">
+                    <button type="button">Go to Main Page</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
